@@ -1,0 +1,1 @@
+﻿Console.WriteLine(File.ReadAllLines("input.txt").Select(j => j.Split(" ").ToList().Select(str => int.Parse(str))).Select(j => new List<List<int>>(){j.ToList(), j.Select(x => -x).ToList()}).Count(a => a.Any(j => Enumerable.Range(0, j.Count-1).All(t => j[t+1] > j[t] && j[t+1] - j[t] <= 3))));
